@@ -1,0 +1,67 @@
+/* import a professional sans-serif used in government branding */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* custom cursor – themed for Maharashtra State Transport
+   Preferred: an SVG file (e.g. a bus or logo) placed in `public/` as cursor.svg.
+   Fallback coordinates (hotspot) may need adjustment depending on your graphic. */
+body, * {
+  cursor: url('/cursor.svg') 0 0, auto;
+}
+
+/* input focus highlight */
+input:focus, textarea:focus {
+  outline: none;
+  background-color: rgba(255,255,0,0.3);
+}
+
+/* base typographic and background styles */
+@layer base {
+  body {
+    @apply font-sans text-gray-800;
+    /* make body transparent so background image is visible */
+    background-color: transparent;
+    position: relative; /* for pseudo-element */
+  }
+}
+
+/* @keyframes busMove {
+  0% {
+    transform: translateX(-200px);
+  }
+  100% {
+    transform: translateX(110vw);
+  }
+} */
+
+@keyframes busEntry {
+  0% {
+    transform: translateX(-120vw) scale(0.4);
+    opacity: 0;
+  }
+
+  60% {
+    transform: translateX(-10vw) scale(0.8);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateX(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.bus-entry {
+  animation: busEntry 2s ease-out forwards;
+}
+
+/* .img4-animation {
+  position: fixed;
+  bottom: 40px;
+  left: 0;
+  width: 150px;
+  animation: busMove 4s linear infinite;
+} */
