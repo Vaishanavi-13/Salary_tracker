@@ -44,7 +44,7 @@ export default function Signup() {
         {/* Header */}
         <div className="bg-msrtc-red text-white text-center py-5 px-6">
           <img
-            src="/public/img3.jpg"
+            src="/img3.png"
             alt="MSRTC"
             className="h-12 w-auto mx-auto mb-2"
           />

@@ -1,7 +1,9 @@
 {
+
   "name": "salary-tracker",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
+  "homepage": "https://vaishanavi-13.github.io/Salary_tracker",
   "type": "module",
   "scripts": {
   "dev": "vite",

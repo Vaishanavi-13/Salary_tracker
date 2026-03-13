@@ -49,7 +49,7 @@ export default function Login() {
         {/* Header */}
         <div className="bg-msrtc-red text-white text-center py-5 px-6">
           {/* logo placeholder - put msrtc-logo.svg in public/ */}
-          <img src="/public/img3.jpg" alt="MSRTC" className="h-12 w-auto mx-auto mb-2" />
+          <img src="/img3.png" alt="MSRTC" className="h-12 w-auto mx-auto mb-2" />
               <h1 className="text-2xl font-bold tracking-wide">
             {t('login.title')}
           </h1>

@@ -5,7 +5,7 @@ export default function BusLoader() {
       <div className="text-center">
 
         <img
-          src="/public/img4.pngs"
+          src="/img4.png"
           alt="bus"
           className="w-40 animate-pulse"
         />
