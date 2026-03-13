@@ -1,4 +1,3 @@
-import busImage from "../assets/img4.jpg";
 export default function BusLoader() {
   return (
     <div className="fixed inset-0 bg-white flex items-center justify-center z-50">
@@ -6,7 +5,7 @@ export default function BusLoader() {
       <div className="text-center">
 
         <img
-          src={busImage}
+          src="/img4.jpg"
           alt="bus"
           className="w-40 animate-pulse"
         />

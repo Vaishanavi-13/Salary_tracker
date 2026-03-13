@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { useLanguage } from "../../utils/language";
+import busImage1 from "../../assets/img3.jpg";
 
 export default function Signup() {
   const navigate = useNavigate();
@@ -44,7 +45,7 @@ export default function Signup() {
         {/* Header */}
         <div className="bg-msrtc-red text-white text-center py-5 px-6">
           <img
-            src="/img3.png"
+            src={busImage1}
             alt="MSRTC"
             className="h-12 w-auto mx-auto mb-2"
           />

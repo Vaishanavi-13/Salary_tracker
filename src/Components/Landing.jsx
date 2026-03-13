@@ -1,6 +1,7 @@
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { useLanguage } from "../utils/language";
+import busImage from "../assets/img4.jpg";
 
 export default function Landing() {
 
@@ -22,7 +23,7 @@ export default function Landing() {
       {/* Bus Animation */}
 
       <img
-        src="/img4.png"
+        src={busImage}
         alt="MSRTC Bus"
         className="bus-entry w-[450px] md:w-[550px] mb-10"
       />

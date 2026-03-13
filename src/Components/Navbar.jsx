@@ -1,5 +1,6 @@
 import { useNavigate, useLocation } from "react-router-dom";
 import { useLanguage } from "../utils/language";
+import busImage1 from "../assets/img3.jpg";
 
 export default function Navbar() {
 
@@ -24,7 +25,7 @@ export default function Navbar() {
 
         {/* Left — Logo & Title */}
         <div className="flex items-center gap-3">
-          <img src="/img3.jpg" alt="MSRTC" className="h-8 w-auto" />
+          <img src={busImage1} alt="MSRTC" className="h-8 w-auto" />
           <div>
             <h1 className="text-xl font-bold tracking-wide">
               {t('navbarTitle')}

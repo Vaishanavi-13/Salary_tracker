@@ -8,9 +8,7 @@
 /* custom cursor – themed for Maharashtra State Transport
    Preferred: an SVG file (e.g. a bus or logo) placed in `public/` as cursor.svg.
    Fallback coordinates (hotspot) may need adjustment depending on your graphic. */
-body, * {
-  cursor: url('/cursor.svg') 0 0, auto;
-}
+
 
 /* input focus highlight */
 input:focus, textarea:focus {
@@ -27,15 +25,6 @@ input:focus, textarea:focus {
     position: relative; /* for pseudo-element */
   }
 }
-
-/* @keyframes busMove {
-  0% {
-    transform: translateX(-200px);
-  }
-  100% {
-    transform: translateX(110vw);
-  }
-} */
 
 @keyframes busEntry {
   0% {
@@ -57,11 +46,3 @@ input:focus, textarea:focus {
 .bus-entry {
   animation: busEntry 2s ease-out forwards;
 }
-
-/* .img4-animation {
-  position: fixed;
-  bottom: 40px;
-  left: 0;
-  width: 150px;
-  animation: busMove 4s linear infinite;
-} */
