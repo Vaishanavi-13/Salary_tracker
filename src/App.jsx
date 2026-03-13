@@ -1,5 +1,6 @@
-import { BrowserRouter, Routes, Route, Navigate, useLocation } from "react-router-dom";
+import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { HashRouter as Router } from "react-router-dom"; // Use HashRouter
 
 import Landing from "./Components/Landing";
 import Navbar from "./Components/Navbar";
@@ -13,10 +14,8 @@ import BusLoader from "./Components/BusLoader";
 import { LanguageProvider } from "./utils/language";
 import { getSessionUser } from "./utils/storage";
 
-
 // ---------- Route Protection ----------
 function ProtectedRoute({ children, role }) {
-
   const user = getSessionUser();
 
   if (!user) {
@@ -30,40 +29,32 @@ function ProtectedRoute({ children, role }) {
   return children;
 }
 
-
 // ---------- Route Loader Wrapper ----------
 function AppRoutes() {
-
   const location = useLocation();
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
+    if (location.pathname === "/") {
+      setLoading(false);
+      return;
+    }
 
-  // Do not show loader on landing page
-  if (location.pathname === "/") {
-    setLoading(false);
-    return;
-  }
+    setLoading(true);
 
-  setLoading(true);
+    const timer = setTimeout(() => {
+      setLoading(false);
+    }, 600);
 
-  const timer = setTimeout(() => {
-    setLoading(false);
-  }, 600);
-
-  return () => clearTimeout(timer);
-
-}, [location.pathname]);
+    return () => clearTimeout(timer);
+  }, [location.pathname]);
 
   return (
     <>
-
       {loading && location.pathname !== "/" && <BusLoader />}
-
       <Navbar />
 
       <Routes>
-
         {/* Public Routes */}
         <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
@@ -101,27 +92,18 @@ function AppRoutes() {
 
         {/* Unknown route */}
         <Route path="*" element={<Navigate to="/" replace />} />
-
       </Routes>
-
     </>
   );
 }
 
-
 // ---------- Main App ----------
 export default function App() {
-
   return (
-    <BrowserRouter>
-
+    <Router> {/* <-- Use HashRouter here */}
       <LanguageProvider>
-
         <AppRoutes />
-
       </LanguageProvider>
-
-    </BrowserRouter>
+    </Router>
   );
-
 }
